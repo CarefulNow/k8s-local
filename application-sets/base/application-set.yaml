@@ -7,15 +7,15 @@ spec:
   goTemplateOptions: ["missingkey=error"]
   generators:
   - git:
-      repoURL: https://github.com/argoproj/argo-cd.git
+      repoURL: https://github.com/CarefulNow/k8s-local.git
       revision: HEAD
       directories:
-      - path: applicationset/examples/git-generator-directory/cluster-addons/*
+      - path: helm/*
   template:
     metadata:
       name: '{{.path.basename}}'
     spec:
-      project: "my-project"
+      project: "local"
       source:
         repoURL: https://github.com/argoproj/argo-cd.git
         targetRevision: HEAD

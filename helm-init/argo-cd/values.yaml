@@ -1,11 +1,15 @@
 argo-cd:
   configs:
+    repositories:
+      k8s-local:
+        url: https://github.com/CarefulNow/k8s-local
     cm:
       annotations:
-        - application.resourceTrackingMethod: annotation+label
+        application.resourceTrackingMethod: annotation+label
     params:
       server.insecure: true
       server.rootpath: "/argo"
+      applicationsetcontroller.namespaces: "*"
     secret:
       argocdServerAdminPassword: "$2a$10$V9pKkHTq6eITTTlWbljWH.e6b8jLbeykLK.vpx4Lia6.JVECu8iza"
 

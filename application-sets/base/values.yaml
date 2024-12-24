@@ -1,0 +1,29 @@
+argocd-apps:
+  applicationsets:
+    base-app-set:
+      namespace: base-app-set
+      finalizers:
+      - resources-finalizer.argocd.argoproj.io
+      goTemplate: true
+      goTemplateOptions: [ "missingkey=error" ]
+      generators:
+      - git:
+          repoURL: https://github.com/CarefulNow/k8s-local.git
+          revision: HEAD
+          directories:
+          - path: helm/base/*
+      template:
+        metadata:
+          name: '{{.path.basenameNormalized}}'
+        spec:
+          project: "base"
+          source:
+            repoURL: https://github.com/CarefulNow/k8s-local.git
+            targetRevision: HEAD
+            path: '{{.path.path}}'
+          destination:
+            server: https://kubernetes.default.svc
+            namespace: '{{index .path.segments 1}}-{{.path.basenameNormalized}}'
+          syncPolicy:
+            syncOptions:
+              - CreateNamespace=true

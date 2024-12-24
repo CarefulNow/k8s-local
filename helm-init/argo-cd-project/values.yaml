@@ -1,0 +1,19 @@
+argocd-apps:
+  projects:
+    base:
+      namespace: argocd
+      finalizers:
+      - resources-finalizer.argocd.argoproj.io
+      sourceRepos:
+      - '*'
+      destinations:
+      - namespace: "!argocd"
+        server: '*'
+      - namespace: "*"
+        server: https://kubernetes.default.svc
+      clusterResourceWhitelist:
+      - group: ''
+        kind: Namespace
+      permitOnlyProjectScopedClusters: false
+      sourceNamespaces:
+      - "base*"
