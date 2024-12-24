@@ -1,0 +1,11 @@
+argo-cd:
+  configs:
+    cm:
+      annotations:
+        - application.resourceTrackingMethod: annotation+label
+    params:
+      server.insecure: true
+      server.rootpath: "/argo"
+    secret:
+      argocdServerAdminPassword: "$2a$10$V9pKkHTq6eITTTlWbljWH.e6b8jLbeykLK.vpx4Lia6.JVECu8iza"
+
