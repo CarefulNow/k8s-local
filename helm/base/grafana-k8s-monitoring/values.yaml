@@ -7,16 +7,28 @@ k8s-monitoring:
       basicAuth:
         usernameKey: prometheus_user
         passwordKey: password
+      secret:
+        create: false
+        name: grafana-k8s-monitoring-secrets
+        namespace: base-grafana-k8s-monitoring
     loki:
       hostKey: loki_host
       basicAuth:
         usernameKey: loki_user
         passwordKey: password
+      secret:
+        create: false
+        name: grafana-k8s-monitoring-secrets
+        namespace: base-grafana-k8s-monitoring
     tempo:
       hostKey: tempo_host
       basicAuth:
         usernameKey: tempo_user
         passwordKey: password
+      secret:
+        create: false
+        name: grafana-k8s-monitoring-secrets
+        namespace: base-grafana-k8s-monitoring
   metrics:
     enabled: true
     alloy:
