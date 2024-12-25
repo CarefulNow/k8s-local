@@ -1,3 +1,0 @@
-falco-exporter:
-  serviceMonitor:
-    enabled: true
