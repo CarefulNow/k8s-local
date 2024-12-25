@@ -1,0 +1,6 @@
+vault:
+  injector:
+    agentDefaults:
+      cpuRequest: 50m
+  ui:
+    enabled: true

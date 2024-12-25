@@ -1,0 +1,8 @@
+apiVersion: v2
+name: hashicorp-vault
+version: 1.0.0
+dependencies:
+  - name: vault
+    version: 0.29.1
+    repository: https://helm.releases.hashicorp.com
+
