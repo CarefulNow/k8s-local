@@ -2,4 +2,4 @@ trivy-operator:
   trivy:
     serverInsecure: true
   serviceMonitor:
-    enabled: true
+    enabled: false
