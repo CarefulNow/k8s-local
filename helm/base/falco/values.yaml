@@ -2,3 +2,6 @@ falco:
   tty: true
   serviceMonitor:
     create: false
+  falco:
+    grpc:
+      enabled: true
