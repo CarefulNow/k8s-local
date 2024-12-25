@@ -1,2 +1,4 @@
 falco:
   tty: true
+  serviceMonitor:
+    create: true
