@@ -12,8 +12,8 @@ argocd-apps:
       - namespace: "*"
         server: https://kubernetes.default.svc
       clusterResourceWhitelist:
-      - group: ''
-        kind: Namespace
+      - group: '*'
+        kind: '*'
       permitOnlyProjectScopedClusters: false
       sourceNamespaces:
       - "base*"

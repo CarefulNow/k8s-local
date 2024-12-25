@@ -1,7 +1,10 @@
 argo-cd:
+  applicationSet:
+    allowAnyNamespace: true
   configs:
     repositories:
       k8s-local:
+        name: k8s-local
         url: https://github.com/CarefulNow/k8s-local
     cm:
       annotations:
@@ -10,6 +13,7 @@ argo-cd:
       server.insecure: true
       server.rootpath: "/argo"
       applicationsetcontroller.namespaces: "*"
+      applicationsetcontroller.allowed.scm.providers: https://github.com/CarefulNow/
     secret:
       argocdServerAdminPassword: "$2a$10$V9pKkHTq6eITTTlWbljWH.e6b8jLbeykLK.vpx4Lia6.JVECu8iza"
 

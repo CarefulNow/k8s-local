@@ -1,7 +1,7 @@
 argocd-apps:
   applicationsets:
     base-app-set:
-      namespace: base-app-set
+      namespace: argocd
       finalizers:
       - resources-finalizer.argocd.argoproj.io
       goTemplate: true
