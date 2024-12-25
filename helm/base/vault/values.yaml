@@ -4,3 +4,13 @@ vault:
       cpuRequest: 50m
   ui:
     enabled: true
+  server:
+    readinessProbe:
+      enabled: true
+      path: "/v1/sys/health?standbyok=true&sealedcode=204&uninitcode=204"
+    livenessProbe:
+      enabled: true
+      path: "/v1/sys/health?standbyok=true"
+      initialDelaySeconds: 60
+    standalone:
+      enabled: true

@@ -10,8 +10,7 @@ spec:
     - matches:
       - path:
           type: PathPrefix
-          value: /ui
+          value: /
       backendRefs:
       - name: vault
         port: 8200
-
